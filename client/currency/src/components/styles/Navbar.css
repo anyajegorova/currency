@@ -1,0 +1,18 @@
+.navbar{
+    height: 2em;
+    background-color: var(--primary-green);
+    display: flex;
+    justify-content: flex-end;
+    gap: 1.2em;
+    align-items: center;
+    padding: 0 1em;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+.navbar a{
+    color: var(--text-color);
+}
+
+.navbar .active{
+    color: var(--lighter-text-color);
+}

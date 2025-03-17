@@ -1,5 +1,5 @@
 import React from 'react'
-import './CurrencyConverter.css'
+import './styles/CurrencyConverter.css'
 
 const CurrencyConverter = () => {
   return (

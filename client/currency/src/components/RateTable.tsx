@@ -8,15 +8,15 @@ const RateTable = () => {
     const [error, setError] = useState<string | null>(null)
 
     useEffect(() => {
-      axios.get('http://localhost:3000/')
-        .then((response) => {
-          setLoading(false)
-          setRates(response.data.data)
-        })
-        .catch((error) => {
-          setError(error.message)
-          setLoading(false)
-        })
+      // axios.get('http://localhost:3000/')
+      //   .then((response) => {
+      //     setLoading(false)
+      //     setRates(response.data.data)
+      //   })
+      //   .catch((error) => {
+      //     setError(error.message)
+      //     setLoading(false)
+      //   })
     }, [])
 
   return (
