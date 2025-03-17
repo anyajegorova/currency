@@ -1,4 +1,5 @@
 const {Pool} = require('pg');
+const dotenv = require('dotenv');
 
 dotenv.config();
 const password = process.env.PASSWORD;
@@ -7,7 +8,7 @@ const host = process.env.HOST;
 const database = process.env.DATABASE;
 
 
-const pool = new Pool({
+const exchangeRatePool = new Pool({
     user: user,
     host: host,
     database: database,
@@ -15,6 +16,14 @@ const pool = new Pool({
     port: 5432,
 });
 
+exchangeRatePool.on("connect", () => {
+    console.log("Connected to the PostgreSQL database");
+});
+
+exchangeRatePool.on("error", (err) => {
+    console.error("Database connection error:", err);
+});
+
 module.exports = {
-    query: (text, params) => pool.query(text, params),
+    query: (text, params) => exchangeRatePool.query(text, params),
 }
